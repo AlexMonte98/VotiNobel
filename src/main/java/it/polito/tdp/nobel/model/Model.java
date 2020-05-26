@@ -30,8 +30,9 @@ public class Model {
 	private void cerca(Set <Esame>parziale,int L,int m) {
 		
 		int crediti=sommaCrediti(parziale);
-		 if(crediti>m)
+		 if(crediti>m) {
 			 return;
+		 }
 		 
 		 if (crediti==m) {
 			 double media=calcolaMedia(parziale);
@@ -39,6 +40,7 @@ public class Model {
 				 bestSoluzione=new HashSet<>(parziale);
 				 bestMedia=media;
 			 }
+			 return;
 		 }
 		 
 		 if(L==esami.size()) {

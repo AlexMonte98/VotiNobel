@@ -37,6 +37,10 @@ public class FXMLController {
     		try {
     			int numeroCrediti = Integer.parseInt(txtInput.getText());
     			Set<Esame> voti = model.calcolaSottoinsiemeEsami(numeroCrediti);
+    			if(voti==null) {
+    				txtResult.appendText("no soluzioni");
+    				return;
+    			}
     			
     			for(Esame e: voti) {
     				txtResult.appendText(e.toString()+"\n");
